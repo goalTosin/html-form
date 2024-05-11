@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Simple HTML Form example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel='stylesheet' type='text/css' href='main.css'> -->
+    <!-- <script src='main.js'></script> -->
+    <style>
+      :root {
+        --box-shadow: 5px 4px 3px #00000080;
+        font-size: x-large;
+        font-weight: 100;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+          sans-serif;
+        letter-spacing: 1px;
+      }
+      body {
+        margin: 0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      h1 {
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: 100;
+        text-shadow: 2px 2px 3px #00000080;
+        margin-bottom: 0.5em;
+        margin-left: 0.35em;
+      }
+      form {
+        margin: auto;
+        min-width: 17em;
+        max-width: 24em;
+        box-shadow: 6px 8px 4px #00000080;
+        padding: 1em;
+        border: 1px solid #00000080;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        /* font-weight: bold; */
+      }
+      form > div {
+        /* width: 80%; */
+        min-width: 14em;
+        max-width: 20em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      form > div > input {
+        /* width: 100%; */
+        box-shadow: var(--box-shadow);
+        border-radius: 9999px;
+        border: 1px solid black;
+        height: 2em;
+        padding-left: 1em;
+        padding-right: 1em;
+        font: inherit;
+        width: max-content;
+      }
+      form > input[type='submit'] {
+        /* width: 100%; */
+        padding: 0.5em 1em;
+        border-radius: 999px;
+        box-shadow: var(--box-shadow);
+        /* max-width: 10em; */
+        font: inherit;
+        /* font-size: 1.2em; */
+        margin: auto;
+        background-color: blue;
+        cursor: pointer;
+        transition-property: transform, background-color;
+        transition-duration: 100ms;
+        color: white;
+        font-weight: lighter;
+        border: none;
+      }
+      form > input[type='submit']:hover {
+        /* width: 100%; */
+        background-color: rgb(95, 95, 255);
+      }
+      form > input[type='submit']:active {
+        /* width: 100%; */
+        background-color: rgb(145, 145, 255);
+        transform: scale(0.9);
+      }
+      /* form > div > input::placeholder {
+      /* width: 100%; * /
+      content: 'Type something';
+    } */
+    </style>
+  </head>
+  <body>
+    <h1>Simple HTML Form example</h1>
+    <form method="post">
+      <div>
+        <label for="uname">First name:</label>
+        <input
+          value="Kehinde"
+          type="text"
+          name="user"
+          id="uname"
+          class="username"
+          required
+        />
+      </div>
+      <div>
+        <label for="sname">Surname:</label>
+        <input
+          value="Idowu"
+          type="text"
+          name="sur"
+          id="sname"
+          class="surname"
+          required
+        />
+      </div>
+      <div>
+        <label for="oname">Other name:</label>
+        <input
+          value="Dada"
+          type="text"
+          name="other"
+          id="oname"
+          class="othername"
+        />
+      </div>
+      <div>
+        <label for="pno">Phone no.:</label>
+        <input
+          pattern="^(?:0|\+?44|\+?234)(?:\d\s?){9,10}$"
+          value="+234324582345"
+          type="tel"
+          name="phone"
+          id="pno"
+          class="phone_no"
+          aria-errormessage="sdfs"
+          required
+        />
+      </div>
+      <div>
+        <label for="email">E-mail:</label>
+        <input
+          value="dada.kehinde@gmail.com"
+          type="email"
+          name="e"
+          id="email"
+          class="email"
+          required
+        />
+      </div>
+      <div>
+        <label for="pword">Password:</label>
+        <input
+          value="kehinde"
+          type="password"
+          name="pass"
+          id="pword"
+          class="password"
+          minlength="4"
+          maxlength="6"
+          required
+        />
+        <!-- <br> -->
+        <!-- <p>Make sure the password is more than</p> -->
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
